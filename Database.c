@@ -331,7 +331,7 @@ void saveData(student* person, int count) {
     int i;
     const char* outputFormat = "(%s, %s , %d)\n";
     FILE* file;
-    file = fopen("test.txt", "w+");
+    file = fopen("Test.txt", "w+");
     // Output to file.
     for (i = 0;i < count;i++) {
         fprintf(file, outputFormat, person[i].FullName, person[i].studentID, person[i].MemYear);
