@@ -76,8 +76,11 @@ int main(void) {
         // Print options for user
         print();
 
+        //input validate if there is a character at the end of a number
+        char inputValidation;
+
         // Input validation.
-        while (scanf("%d", &input) != 1) {
+        while (scanf(" %d%c", &input, &inputValidation) != 2 || inputValidation != '\n') {
             fflush(stdin);
             printf("You input is invalid, try again!\n");
             print();
@@ -110,11 +113,14 @@ int main(void) {
         }
     }
 
+    //input validate if there is a character at the end of a number
+    char inputValidation;
+
     // Allow user to save changes.
     printf("Do you wish to save the changes (1/0) ?");
 
     // Input validation.
-    while (scanf("%d", &save) != 1) {
+    while (scanf(" %d%c", &save, &inputValidation) != 2 || inputValidation != '\n') {
         fflush(stdin);
         system("clear");
         printf("You input is invalid, try again!\n");
@@ -156,7 +162,10 @@ void print() {
 // Use this function to input student data.
 int dataInput(student* person, student** off_array, int count) {
 
+    //input validate if there is a character at the end of a number
+    char inputValidation;
 
+    // Use to start initialise loop.
     int confirm = 1;
 
     // While user is not finished,keep entering data.
@@ -177,7 +186,7 @@ int dataInput(student* person, student** off_array, int count) {
         printf("Enter year of membership: ");
 
         // Input validation.
-        while (scanf("%d", &person[count].MemYear) != 1) {
+        while (scanf(" %d%c", &person[count].MemYear, &inputValidation) != 2 || inputValidation != '\n') {
             fflush(stdin);
             printf("You input is invalid, try again!\n");
             printf("Enter year of membership: ");
@@ -187,7 +196,7 @@ int dataInput(student* person, student** off_array, int count) {
         printf("Do you wish to add another student (1/0) ?\n");
 
         // Input validation.
-        while (scanf("%d", &confirm) != 1) {
+        while (scanf(" %d%c", &confirm, &inputValidation) != 2 || inputValidation != '\n') {
             fflush(stdin);
             printf("You input is invalid, try again!\n");
             printf("Do you wish to add another student (1/0) ?\n");
@@ -221,6 +230,9 @@ int dataDelete(student* person, student** realPer, int count) {
     int rem = 0;
     int remYear;
 
+    //input validate if there is a character at the end of a number
+    char inputValidation;
+
 
     // Repeat until user specifies they no longer want to delete.
     while (confirm != 0) {
@@ -229,7 +241,7 @@ int dataDelete(student* person, student** realPer, int count) {
         printf("Do you wish to remove students by ID or Year (1/2)?");
 
         // Input validation.
-        while (scanf("%d", &rem) != 1) {
+        while (scanf(" %d%c", &rem, &inputValidation) != 2 || inputValidation != '\n') {
             fflush(stdin);
             printf("You input is invalid, try again!\n");
             printf("Do you wish to remove students by ID or Year (1/2)?");
@@ -258,7 +270,7 @@ int dataDelete(student* person, student** realPer, int count) {
             printf("Enter the year to remove: ");
 
             // Input validation.
-            while (scanf("%d", &remYear) != 1) {
+            while (scanf(" %d%c", &remYear, &inputValidation) != 2 || inputValidation != '\n') {
                 fflush(stdin);
                 printf("You input is invalid, try again!\n");
                 printf("Enter the year to remove: ");
@@ -281,7 +293,7 @@ int dataDelete(student* person, student** realPer, int count) {
         printf("Do you wish to delete more (1/0) ?: ");
 
         // Input validation.
-        while (scanf("%d", &confirm) != 1) {
+        while (scanf(" %d%c", &confirm, &inputValidation) != 2 || inputValidation != '\n') {
             fflush(stdin);
             printf("You input is invalid, try again!\n");
             printf("Do you wish to delete more (1/0) ?: ");
