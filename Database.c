@@ -55,6 +55,10 @@ int main(void) {
     // loop through the file and input into the structure.
     while (feof(file) == 0) {
 
+        //Followed the following guide to help me scan data from the file into structs
+        //https://www.youtube.com/watch?v=QrKpqdBiFRI&ab_channel=CodeVault
+        
+        
         //scan from the file into the structure.
         fscanf(file, inputFormat, person[filecount].FullName, person[filecount].studentID, &person[filecount].MemYear);
 
